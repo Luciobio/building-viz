@@ -1,0 +1,12 @@
+.plants {
+    background-image: url('https://3dus.us/wp-content/uploads/2021/05/Marina-Westshore-Townhomes-Floorplan_cam-persp-scaled.jpg');
+    background-size: 100%;
+    position: absolute;
+    top: -20%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
