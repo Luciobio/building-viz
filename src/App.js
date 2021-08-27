@@ -9,11 +9,13 @@ import Home from './components/Home/Home'
 import Building from './components/Building/Building'
 import Amenities from './components/Amenities/Amenities'
 import Plants from './components/Plants/Plants'
+import Slideshow from './Slideshow.js'
+
 import './App.css'
 
 function App() {
   return (
-    <Router>
+    <Router className='main'>
       <div className='App'>
       <div className='menu'>
         <Link to='/' className='btn'>
@@ -28,6 +30,9 @@ function App() {
         <Link to='/plants' className='btn'>
           Plants
         </Link>
+        <Link to='/slideshow' className='btn'>
+          Slideshow
+        </Link>
       </div>
       <Switch>
         <Route path='/' exact>
@@ -41,6 +46,9 @@ function App() {
         </Route>
         <Route path='/plants'>
           <Plants/>
+        </Route>
+        <Route path='/slideshow'>
+          <Slideshow/>
         </Route>
       </Switch>
       </div>
