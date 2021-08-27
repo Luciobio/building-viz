@@ -9,7 +9,6 @@ import Home from './components/Home/Home'
 import Building from './components/Building/Building'
 import Amenities from './components/Amenities/Amenities'
 import Plants from './components/Plants/Plants'
-import Slideshow from './Slideshow.js'
 
 import './App.css'
 
@@ -46,9 +45,6 @@ function App() {
         </Route>
         <Route path='/plants'>
           <Plants/>
-        </Route>
-        <Route path='/slideshow'>
-          <Slideshow/>
         </Route>
       </Switch>
       </div>

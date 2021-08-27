@@ -1,80 +1,32 @@
-import React, { useState } from 'react';
-import {
-  Carousel,
-  CarouselItem,
-  CarouselControl,
-  CarouselIndicators,
-  CarouselCaption
-} from 'reactstrap';
-
+import React from 'react'
+import Slideshow from '../Slideshow/Slideshow'
 import './Building.css'
 
-const items = [
+const building = [
     {
-      src: 'https://3dus.us/wp-content/uploads/2021/05/Marina-Westshore-Townhomes-Street-View-Corner.jpg',
-      altText: 'West View',
-      caption: 'West View'
+      id:0,
+      name:'South View',
+      src: 'https://3dus.us/wp-content/uploads/2021/05/Marina-Westshore-Townhomes-Aerial-view-1.jpg'
     },
     {
-      src: 'https://3dus.us/wp-content/uploads/2021/05/Marina-Westshore-Townhomes-Street-View-Front-1.jpg',
-      altText: 'South View',
-      caption: 'South View'
+      id:1,
+      name: 'West View',
+      src: 'https://3dus.us/wp-content/uploads/2021/05/Marina-Westshore-Townhomes-Street-View-Front-1.jpg'
     },
     {
-      src: 'https://3dus.us/wp-content/uploads/2021/05/Marina-Westshore-Townhomes-Street-View-Corner.jpg',
-      altText: 'East View',
-      caption: 'East View'
+      id:2,
+      name: 'East View',
+      src: 'https://3dus.us/wp-content/uploads/2021/05/Marina-Westshore-Townhomes-Street-View-Corner.jpg'
     }
   ];
 
-const Building = (props) => {
-    const [activeIndex, setActiveIndex] = useState(1);
-    const [animating, setAnimating] = useState(false);
+const Building = () => {
   
-    const next = () => {
-      if (animating) return;
-      const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
-      setActiveIndex(nextIndex);
-    }
-  
-    const previous = () => {
-      if (animating) return;
-      const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
-      setActiveIndex(nextIndex);
-    }
-  
-    const goToIndex = (newIndex) => {
-      if (animating) return;
-      setActiveIndex(newIndex);
-    }
-  
-    const slides = items.map((item) => {
-      return (
-        <CarouselItem
-          onExiting={() => setAnimating(true)}
-          onExited={() => setAnimating(false)}
-          key={item.src}
-        >
-          <img src={item.src} alt={item.altText} width='100%'/>
-          <CarouselCaption captionHeader={item.caption} />
-        </CarouselItem>
-      );
-    });
-  
-    return (
-      <Carousel 
-        className='building'
-        activeIndex={activeIndex}
-        next={next}
-        previous={previous}
-        interval={false}
-      >
-        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
-        {slides}
-        <CarouselControl direction="prev" directionText=" " onClickHandler={previous} />
-        <CarouselControl direction="next" directionText=" " onClickHandler={next} />
-      </Carousel>
-    );
+  return (
+    <div>
+      <Slideshow items = {building}/>
+    </div>
+  );
   }
 
 export default Building

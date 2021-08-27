@@ -1,28 +1,9 @@
 import React, {useState} from 'react';
 import './Slideshow.css'
-import {ReactComponent as PrevArrow} from './icons/arrow-prev.svg'
-import {ReactComponent as NextArrow} from './icons/arrow-next.svg'
+import {ReactComponent as PrevArrow} from './../../icons/arrow-prev.svg'
+import {ReactComponent as NextArrow} from './../../icons/arrow-next.svg'
 
-const items = [
-    {
-        id: 0,
-        name: 'Kitchen',
-        src: 'https://3dus.us/wp-content/uploads/2021/05/Marina-Weshore-Townhomes-Kitchen-Living-view-1.jpg'
-    },
-    {
-        id: 1,
-        name: 'Bedroom',
-        src: 'https://3dus.us/wp-content/uploads/2021/05/Marina-Westshore-Townhomes-Master-Bedroom-1.jpg'
-    },
-    {
-        id: 2,
-        name: 'Bathroom',
-        src: 'https://3dus.us/wp-content/uploads/2021/05/Marina-Westshore-Townhomes-Master-Bathroom-View-1.jpg'
-    }
-
-]
-
-const Slideshow = () => {
+const Slideshow = ({items}) => {
     
     const [item, setItem] = useState(0);
 
@@ -40,7 +21,7 @@ const Slideshow = () => {
         <div className='slider-cont'>
             <div className='slide'>
                 <img
-                    className='slide-img'
+                    className='slide-img fade-in'
                     src={items[item].src} 
                     alt=''
                 />

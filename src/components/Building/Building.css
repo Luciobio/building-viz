@@ -1,7 +1,0 @@
-.building {
-    position: fixed;
-    height: 100vh;
-    width: auto;
-    object-fit: cover;
-    z-index: 1; 
-}
