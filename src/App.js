@@ -29,9 +29,6 @@ function App() {
         <Link to='/plants' className='btn'>
           Plants
         </Link>
-        <Link to='/slideshow' className='btn'>
-          Slideshow
-        </Link>
       </div>
       <Switch>
         <Route path='/' exact>
