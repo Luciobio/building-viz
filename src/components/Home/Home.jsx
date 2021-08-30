@@ -10,7 +10,7 @@ const Home = () => {
             <img 
                 className='home-bkg'
                 src='https://3dus.us/wp-content/uploads/2021/05/Marina-Westshore-Townhomes-Aerial-view-scaled.jpg'
-                alt='home-bkg'
+                alt=''
             />
             <div className='intro-poster'>
                 <img src={logo} className='logo' alt="Logo"/>
