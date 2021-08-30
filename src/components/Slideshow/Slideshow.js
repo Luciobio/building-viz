@@ -7,21 +7,29 @@ const Slideshow = ({items}) => {
     
     const [item, setItem] = useState(0);
 
+    const changeClassName = () =>{
+        let cName = document.getElementById('slide-image');
+        cName.className = (cName.className === 'slide-img2') ? 'slide-img' : 'slide-img2';
+   }
+
     const next = () => {
         const nextItem = item === items.length - 1 ? 0 : item + 1;
-        setItem(nextItem);
+        setItem(nextItem)
+        changeClassName();
     }
     
     const prev = () => {
         const nextItem = item === 0 ? items.length - 1 : item - 1;
-        setItem(nextItem);
+        setItem(nextItem)
+        changeClassName();
     }
 
     return (
         <div className='slider-cont'>
             <div className='slide'>
                 <img
-                    className='slide-img fade-in'
+                    id='slide-image'
+                    className='slide-img'
                     src={items[item].src} 
                     alt=''
                 />

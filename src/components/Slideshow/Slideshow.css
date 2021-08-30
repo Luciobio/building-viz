@@ -10,23 +10,29 @@
     height: 100vh;
     object-fit: cover;
     z-index: 0;
-}
-
-.fade-in {
-    animation: opacity .6s ease-in;
+    animation: opacity .2s ease-in;
 }
 
 @keyframes opacity {
-    0%{
-        opacity: 0
-    }
-    50%{
-        opacity: 0.5
-    }
-    100%{
-        opacity: 1
-    }
+    0% {opacity: 0};
+    100% {opacity: 1}
 }
+
+.slide-img2 {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+    animation: opacity2 .2s ease-in;
+}
+
+@keyframes opacity2 {
+    0% {opacity: 0};
+    100% {opacity: 1}
+}
+
+
 
 .slide-title {
     position: absolute;
