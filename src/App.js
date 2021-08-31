@@ -36,7 +36,7 @@ function App() {
         <button className='menu-btn' onClick= {changeClassName}>
           <MenuIcon className='menuIcon'/>
         </button>
-        <div id='menu' className='menu-out'>
+        <div id='menu' className='menu'>
           <div className='menu-head'>
             <button className='btn' onClick= {changeClassName}>
               <Xmark className='xmark' />
