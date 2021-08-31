@@ -10,7 +10,7 @@ const Slideshow = ({items}) => {
     const changeClassName = () =>{
         let cName = document.getElementById('slide-image');
         cName.className = (cName.className === 'slide-img2') ? 'slide-img' : 'slide-img2';
-   }
+    }
 
     const next = () => {
         const nextItem = item === items.length - 1 ? 0 : item + 1;

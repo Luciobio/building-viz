@@ -24,18 +24,21 @@ function App() {
   const date = new Date("01/20/2021");
   const year = date.getFullYear();
 
-  
+  const changeClassName = () =>{
+    let cName = document.getElementById('menu');
+    cName.className = (cName.className === 'menu-in') ? 'menu-out' : 'menu-in';
+  }
 
   return (
     <Router className='main'>
       <div className='App'>
       <div className='menu-cont'>
-        <button className='menu-btn'>
+        <button className='menu-btn' onClick= {changeClassName}>
           <MenuIcon className='menuIcon'/>
         </button>
-        <div className='menu'>
+        <div id='menu' className='menu-out'>
           <div className='menu-head'>
-            <button className='btn'>
+            <button className='btn' onClick= {changeClassName}>
               <Xmark className='xmark' />
             </button>
           </div>
