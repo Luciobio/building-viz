@@ -9,6 +9,7 @@ import Home from './components/Home/Home'
 import Building from './components/Building/Building'
 import Amenities from './components/Amenities/Amenities'
 import Plants from './components/Plants/Plants'
+import Video from './components/Video/Video'
 import {ReactComponent as MenuIcon} from './icons/menu.svg'
 import {ReactComponent as Xmark} from './icons/x-mark.svg'
 import blackLogo from './icons/3DUS_logo_black.png'
@@ -55,6 +56,9 @@ function App() {
             <Link to='/plants' className='menu-link'>
               Plants
             </Link>
+            <Link to='/video' className='menu-link'>
+              Video
+            </Link>
           </div>
           <div className='menu-bot'>
             <img src={blackLogo} className='menu-logo' alt=' '/>
@@ -88,6 +92,9 @@ function App() {
         </Route>
         <Route path='/plants'>
           <Plants/>
+        </Route>
+        <Route path='/video'>
+          <Video/>
         </Route>
       </Switch>
       </div>
