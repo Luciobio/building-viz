@@ -33,7 +33,7 @@
 .start-btn {
     border: 1px solid #fff;
     background: rgba(0, 0, 0, .2);
-    border-radius: 3%;
+    border-radius: 8px;
     padding: 2% 35% 2% 35%;
 }
 

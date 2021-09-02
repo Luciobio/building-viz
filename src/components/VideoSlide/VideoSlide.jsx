@@ -25,7 +25,7 @@ const VideoSlide = ({items}) => {
         <div className='slider-cont'>
             <div className='slide'>
                 {items[item].vid}
-                <div className='slide-title'>{items[item].name}</div>
+                {/* <div className='vid-slide-title'>{items[item].name}</div> */}
             </div>
             <div className='slider-btns-cont'>
                 <button className='slider-btns prevBtn' onClick={prev}>

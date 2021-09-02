@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './Home.css'
 import logo from '../../icons/3DUS_icon.png'
+import homebkg from '../../images/posters/WV_img-01_shade.jpg'
+import './Home.css'
 
 
 const Home = () => {
@@ -9,7 +10,7 @@ const Home = () => {
         <div className='home'>
             <img 
                 className='home-bkg'
-                src='https://3dus.us/wp-content/uploads/2021/05/Marina-Westshore-Townhomes-Aerial-view-scaled.jpg'
+                src={homebkg}
                 alt=''
             />
             <div className='intro-poster'>

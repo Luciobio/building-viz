@@ -4,9 +4,9 @@ import terrace from './../../images/floorplans/01-terrace.jpg'
 import thirdfloor from './../../images/floorplans/02-3rd_floor.jpg'
 import secondfloor from './../../images/floorplans/03-2nd_floor.jpg'
 import firstfloor from './../../images/floorplans/04-1st_floor.jpg'
-import './Plants.css'
+import './Floorplans.css'
 
-const plants = [
+const floorplans = [
     {
       id:0,
       name:'Terrace',
@@ -29,13 +29,13 @@ const plants = [
     }
   ];
 
-const Plants = () => {
+const Floorplans = () => {
   
   return (
     <div>
-      <Slideshow items = {plants}/>
+      <Slideshow items = {floorplans}/>
     </div>
   );
   }
 
-export default Plants
+export default Floorplans

@@ -1,87 +1,53 @@
-import React from "react";
-import VideoSlide from '../VideoSlide/VideoSlide'
-import vid01 from './../../videos/WV_animation/WV_Animation_01.mp4'
-import vid02 from './../../videos/WV_animation/WV_Animation_02.mp4'
-import vid03 from './../../videos/WV_animation/WV_Animation_03.mp4'
-import vid04 from './../../videos/WV_animation/WV_Animation_04.mp4'
+/* import React from 'react'
+import Slideshow from '../Slideshow/Slideshow'
+import './Video.css'
 
-const videos = [
+const building = [
     {
-        id:0,
-        name:'01',
-        vid: (
-            <div className='slide-vid'>
-                <video 
-                    className='slide-vid'
-                    autoPlay
-                    preload
-                >
-                <source
-                    src= {vid01}
-                    type='video/mp4'
-                />
-            </video>
-            </div>
-        )
+      id:0,
+      name:'South View',
+      src: 'https://3dus.us/wp-content/uploads/2021/05/Marina-Westshore-Townhomes-Aerial-view-1.jpg'
     },
     {
-        id:1,
-        name: '02',
-        vid: (
-            <video 
-                className='slide-vid'
-                autoPlay
-                preload
-            >
-            <source
-                src= {vid02}
-                type='video/mp4'
-            />
-            </video>
-        )
+      id:1,
+      name: 'West View',
+      src: 'https://3dus.us/wp-content/uploads/2021/05/Marina-Westshore-Townhomes-Street-View-Front-1.jpg'
     },
     {
-        id:2,
-        name: '03',
-        vid: (
-            <div className='slide-vid'>
-                <video 
-                    className='slide-vid'
-                    autoPlay
-                    preload
-                    poster
-                >
-                    <source
-                        src= {vid03}
-                        type='video/mp4'
-                    />
-                </video>
-            </div>
-        )
-    },
-    {
-        id:3,
-        name: '04',
-        vid: (
-            <video 
-                className='slide-vid'
-                autoPlay
-            >
-                <source
-                    src= {vid04}
-                    type='video/mp4'
-                />
-            </video>
-        )
+      id:2,
+      name: 'East View',
+      src: 'https://3dus.us/wp-content/uploads/2021/05/Marina-Westshore-Townhomes-Street-View-Corner.jpg'
     }
-]
+  ];
+
+const Building = () => {
+  
+  return (
+    <div>
+      <Slideshow items = {building}/>
+    </div>
+  );
+  }
+
+export default Building */
+
+import React from 'react'
+import ReactPlayer from "react-player"
+import './Video.css'
 
 const Video = () => {
+  
     return (
-        <div>
-            <VideoSlide items = {videos}/>
-        </div>
-    )
-};
+      <div className='vid'>
+        <ReactPlayer
+          className='vid'
+          url="https://vimeo.com/395299333"
+          controls= 'true'
+          width= ''
+          height= '100%'
+        />
+      </div>
+    );
+    }
 
 export default Video

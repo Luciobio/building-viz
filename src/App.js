@@ -8,7 +8,7 @@ import {
 import Home from './components/Home/Home'
 import Building from './components/Building/Building'
 import Amenities from './components/Amenities/Amenities'
-import Plants from './components/Plants/Plants'
+import Floorplans from './components/Floorplans/Floorplans'
 import Video from './components/Video/Video'
 import {ReactComponent as MenuIcon} from './icons/menu.svg'
 import {ReactComponent as Xmark} from './icons/x-mark.svg'
@@ -53,8 +53,8 @@ function App() {
             <Link to='/amenities' className='menu-link'>
               Amenities
             </Link>
-            <Link to='/plants' className='menu-link'>
-              Plants
+            <Link to='/floorplans' className='menu-link'>
+              Floorplans
             </Link>
             <Link to='/video' className='menu-link'>
               Video
@@ -90,8 +90,8 @@ function App() {
         <Route path='/amenities'>
           <Amenities/>
         </Route>
-        <Route path='/plants'>
-          <Plants/>
+        <Route path='/floorplans'>
+          <Floorplans/>
         </Route>
         <Route path='/video'>
           <Video/>
