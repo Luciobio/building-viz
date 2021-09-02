@@ -9,22 +9,70 @@ const videos = [
     {
         id:0,
         name:'01',
-        src: vid01
+        vid: (
+            <div className='slide-vid'>
+                <video 
+                    className='slide-vid'
+                    autoPlay
+                    preload
+                >
+                <source
+                    src= {vid01}
+                    type='video/mp4'
+                />
+            </video>
+            </div>
+        )
     },
     {
         id:1,
         name: '02',
-        src: vid02
+        vid: (
+            <video 
+                className='slide-vid'
+                autoPlay
+                preload
+            >
+            <source
+                src= {vid02}
+                type='video/mp4'
+            />
+            </video>
+        )
     },
     {
         id:2,
         name: '03',
-        src: vid03
+        vid: (
+            <div className='slide-vid'>
+                <video 
+                    className='slide-vid'
+                    autoPlay
+                    preload
+                    poster
+                >
+                    <source
+                        src= {vid03}
+                        type='video/mp4'
+                    />
+                </video>
+            </div>
+        )
     },
     {
         id:3,
         name: '04',
-        src: vid04
+        vid: (
+            <video 
+                className='slide-vid'
+                autoPlay
+            >
+                <source
+                    src= {vid04}
+                    type='video/mp4'
+                />
+            </video>
+        )
     }
 ]
 

@@ -1,11 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './VideoSlide.css'
 import {ReactComponent as PrevArrow} from './../../icons/arrow-prev.svg'
 import {ReactComponent as NextArrow} from './../../icons/arrow-next.svg'
 
+
+
 const VideoSlide = ({items}) => {
     
     const [item, setItem] = useState(0);
+
+    useEffect( () => {})
 
     const next = () => {
         const nextItem = item === items.length - 1 ? 0 : item + 1;
@@ -20,15 +24,7 @@ const VideoSlide = ({items}) => {
     return (
         <div className='slider-cont'>
             <div className='slide'>
-                <video 
-                    className='slide-vid'
-                    autoPlay
-                >
-                    <source
-                        src={items[item].src}
-                        type='video/mp4'
-                    />
-                </video>
+                {items[item].vid}
                 <div className='slide-title'>{items[item].name}</div>
             </div>
             <div className='slider-btns-cont'>
