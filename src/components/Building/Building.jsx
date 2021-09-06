@@ -16,18 +16,12 @@ const videos = [
         id:0,
         name:'',
         vid: (
-            <div className='slide-vid'>
-                <video 
-                    className='slide-vid'
-                    autoPlay
-                    preload
-                    poster= {img01}
-                >
-                    <source
-                        src= {vid01}
-                        type='video/mp4'
-                    />
-                </video>
+            <div className='slide00'>
+                <img
+                    className='slide00'
+                    src={img01}
+                    alt=''
+                />
             </div>
         )
     },
@@ -39,10 +33,10 @@ const videos = [
                 className='slide-vid'
                 autoPlay
                 preload
-                poster= {img02}
+                poster= {img01}
             >
             <source
-                src= {vid02}
+                src= {vid01}
                 type='video/mp4'
             />
             </video>
@@ -57,10 +51,10 @@ const videos = [
                     className='slide-vid'
                     autoPlay
                     preload
-                    poster= {img03}
+                    poster= {img02}
                 >
                     <source
-                        src= {vid03}
+                        src= {vid02}
                         type='video/mp4'
                     />
                 </video>
@@ -75,13 +69,32 @@ const videos = [
                 className='slide-vid'
                 autoPlay
                 preload
-                poster= {img04}
+                poster= {img03}
             >
                 <source
-                    src= {vid04}
+                    src= {vid03}
                     type='video/mp4'
                 />
             </video>
+        )
+    },
+    {
+        id:4,
+        name: '',
+        vid: (
+            <div className='slide-vid'>
+                <video 
+                    className='slide-vid'
+                    autoPlay
+                    preload
+                    poster= {img04}
+                >
+                    <source
+                        src= {vid04}
+                        type='video/mp4'
+                    />
+                </video>
+            </div>
         )
     }
 ]

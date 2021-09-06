@@ -27,12 +27,7 @@ const Slideshow = ({items}) => {
     return (
         <div className='slider-cont'>
             <div className='slide'>
-                <img
-                    id='slide-image'
-                    className='slide-img'
-                    src={items[item].src} 
-                    alt=''
-                />
+                {items[item].src}
                 <div className='slide-title'>{items[item].name}</div>
             </div>
             <div className='slider-btns-cont'>

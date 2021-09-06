@@ -1,0 +1,33 @@
+.fullsizediv {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.hoverImg {
+    position: absolute;
+    z-index: 1;
+    transition: opacity .2s ease-out;
+    opacity:0;
+}
+
+.hoverImg:hover {
+    opacity: 1;
+}
+
+.hov1a {
+    width: 617px;
+    height: 484px;
+    position: absolute;
+    top: 9.5%;
+    left: 9.6%;
+}
+
+.hov1b {
+    width: 460px;
+    height: 476px;
+    position: absolute;
+    top: 61px;
+    left: 749px;
+}

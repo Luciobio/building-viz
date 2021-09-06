@@ -1,3 +1,11 @@
+.slide00 {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+}
+
 .vidCont {
     width: 100vw;
     position: absolute;
@@ -13,3 +21,4 @@
     border-radius: 8px;
     padding: 1% 2% 1% 2%;
 }
+
