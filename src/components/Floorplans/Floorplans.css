@@ -1,13 +1,11 @@
-.fullsizediv {
+.svg .frame {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
+    top:0;
+    left:0;
+    z-index:1;
 }
 
 .hoverImg {
-    position: absolute;
-    z-index: 1;
     transition: opacity .2s ease-out;
     opacity:0;
 }
@@ -16,18 +14,98 @@
     opacity: 1;
 }
 
-.hov1a {
-    width: 617px;
-    height: 484px;
+.tag {
     position: absolute;
-    top: 9.5%;
-    left: 9.6%;
+    background: white;
+    border: 1px solid white;
+    border-radius: 8px;
+    z-index: 1;
+    pointer-events: none;
 }
 
-.hov1b {
-    width: 460px;
-    height: 476px;
+.tag1a {
+    top:50vh;
+    left:25vw;
+    width: 90px;
+    height: 30px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.circle {
+    fill: orangered;
+    width: 15px;
+    height: 15px;
+}
+
+.tagName {
+    margin:0;
+}
+
+.infoBox {
     position: absolute;
-    top: 61px;
-    left: 749px;
+    background: white;
+    border: 1px solid white;
+    border-radius: 8px;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.boxInfo {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.bI-head {
+    border-bottom: 1px solid darkgray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.boxIcons {
+    width: 25%;
+    border-left: 1px solid darkgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.infoBtns {
+    display: flex;
+    justify-content: space-around;
+}
+
+.infoBtn {
+    border:none;
+    color: white;
+    background: orangered;
+    border-radius: 8px;
+    padding: 3px
+}
+
+.box1a {
+    top:40vh;
+    left:21vw;
+    width: 200px;
+    height: 150px;
+    transition: opacity .2s ease-out;
+    opacity:0;
+}
+
+.infoBox:hover {
+    opacity: 1;
+}
+
+.IB-Icon {
+    width: 25px;
+    height: 25px;
+}
+
+.liltxt {
+    font-size: small;
 }
