@@ -1,24 +1,60 @@
 import React from 'react'
 import Slideshow from '../Slideshow/Slideshow'
+import rooftop from './../../images/cams/rooftop-cam.jpg'
+import bedroom from './../../images/cams/bedroom-cam.jpg'
+import bathroom from './../../images/cams/bathroom-cam.jpg'
+import kitchen from './../../images/cams/kitchen-cam.jpg'
 import './Amenities.css'
 
 const amenities = [
     {
         id: 0,
         name: 'Kitchen',
-        src: 'https://3dus.us/wp-content/uploads/2021/05/Marina-Weshore-Townhomes-Kitchen-Living-view-1.jpg'
+        src: (
+            <img
+                id='slide-image'
+                className='slide-img'
+                src= {kitchen}
+                alt= ''
+            />
+        )
     },
     {
         id: 1,
         name: 'Bedroom',
-        src: 'https://3dus.us/wp-content/uploads/2021/05/Marina-Westshore-Townhomes-Master-Bedroom-1.jpg'
+        src: (
+            <img
+                id='slide-image'
+                className='slide-img'
+                src= {bedroom}
+                alt= ''
+            />
+        )
     },
     {
         id: 2,
         name: 'Bathroom',
-        src: 'https://3dus.us/wp-content/uploads/2021/05/Marina-Westshore-Townhomes-Master-Bathroom-View-1.jpg'
+        src: (
+            <img
+                id='slide-image'
+                className='slide-img'
+                src= {bathroom}
+                alt= ''
+            />
+        )
+    },
+    {
+        id: 3,
+        name: 'Rooftop',
+        src: (
+            <img
+                id='slide-image'
+                className='slide-img'
+                src= {rooftop}
+                alt= ''
+            />
+        )
     }
-
 ]
 
 const Amenities = () => {

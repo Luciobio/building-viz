@@ -1,5 +1,5 @@
 import React from 'react'
-import Slideshow from '../Slideshow/Slideshow'
+import FloorSlide from '../FloorSlide/FloorSlide'
 import terrace from './../../images/floorplans/01-terrace.jpg'
 import thirdfloor from './../../images/floorplans/02-3rd_floor.jpg'
 import secondfloor from './../../images/floorplans/03-2nd_floor.jpg'
@@ -38,7 +38,9 @@ const floorplans = [
                 <Circle className='circle'/>
               </div>
               <div className='bI-cont'>
-                <p>Info info info</p>
+                <div>
+                  <p>Info info info</p>
+                </div>
                 <div className='infoBtns'>
                   <button className='infoBtn'>360?</button>
                   <button className='infoBtn'>Details</button>
@@ -46,12 +48,18 @@ const floorplans = [
               </div>
             </div>
             <div className='boxIcons'>
-              <SurfIcon className='IB-Icon'/>
-              <p className='liltxt'>surf</p>
-              <BedIcon className='IB-Icon'/>
-              <p className='liltxt'>num</p>
-              <BathIcon className='IB-Icon'/>
-              <p className='liltxt'>num</p>
+              <div className='IBIcont'>
+                <SurfIcon className='IB-Icon'/>
+                <p className='liltxt'>surf</p>
+              </div>
+              <div className='IBIcont'>
+                <BedIcon className='IB-Icon'/>
+                <p className='liltxt'>num</p>
+              </div>
+              <div className='IBIcont'>
+                <BathIcon className='IB-Icon'/>
+                <p className='liltxt'>num</p>
+              </div>
             </div>
           </div>
         </div>
@@ -101,7 +109,7 @@ const Floorplans = () => {
   
   return (
     <div>
-      <Slideshow items = {floorplans}/>
+      <FloorSlide items = {floorplans}/>
     </div>
   );
   }
