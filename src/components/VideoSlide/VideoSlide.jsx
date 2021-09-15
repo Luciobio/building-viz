@@ -12,12 +12,12 @@ const VideoSlide = ({items}) => {
     useEffect( () => {})
 
     const next = () => {
-        const nextItem = item === items.length - 1 ? 0 : item + 1;
+        const nextItem = items[item].next;
         setItem(nextItem);
     }
     
     const prev = () => {
-        const nextItem = item === 0 ? items.length - 1 : item - 1;
+        const nextItem = items[item].prev;
         setItem(nextItem);
     }
 

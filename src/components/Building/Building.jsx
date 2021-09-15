@@ -5,11 +5,16 @@ import vid01 from './../../videos/WV_animation/WV_Animation_01.mp4'
 import vid02 from './../../videos/WV_animation/WV_Animation_02.mp4'
 import vid03 from './../../videos/WV_animation/WV_Animation_03.mp4'
 import vid04 from './../../videos/WV_animation/WV_Animation_04.mp4'
+import rev01 from './../../videos/WV_animation/WV_Reverse_01.mp4'
+import rev02 from './../../videos/WV_animation/WV_Reverse_02.mp4'
+import rev03 from './../../videos/WV_animation/WV_Reverse_03.mp4'
+import rev04 from './../../videos/WV_animation/WV_Reverse_04.mp4'
 import img01 from './../../images/posters/WV_img-01.jpg'
 import img02 from './../../images/posters/WV_img-02.jpg'
 import img03 from './../../images/posters/WV_img-03.jpg'
 import img04 from './../../images/posters/WV_img-04.jpg'
 import './Building.css'
+
 
 const videos = [
     {
@@ -23,7 +28,9 @@ const videos = [
                     alt=''
                 />
             </div>
-        )
+        ),
+        prev: 8,
+        next: 1
     },
     {
         id:1,
@@ -40,7 +47,9 @@ const videos = [
                 type='video/mp4'
             />
             </video>
-        )
+        ),
+        prev: 8,
+        next: 2
     },
     {
         id:2,
@@ -59,7 +68,9 @@ const videos = [
                     />
                 </video>
             </div>
-        )
+        ),
+        prev: 7,
+        next: 3
     },
     {
         id:3,
@@ -76,7 +87,9 @@ const videos = [
                     type='video/mp4'
                 />
             </video>
-        )
+        ),
+        prev: 6,
+        next: 4
     },
     {
         id:4,
@@ -95,7 +108,89 @@ const videos = [
                     />
                 </video>
             </div>
-        )
+        ),
+        prev: 5,
+        next: 1
+    },
+    {
+        id:5,
+        name: '',
+        vid: (
+            <video 
+                className='slide-vid'
+                autoPlay
+                preload
+                poster= {img01}
+            >
+                <source
+                    src= {rev04}
+                    type='video/mp4'
+                />
+            </video>
+        ),
+        prev: 6,
+        next: 4
+    },
+    {
+        id:6,
+        name: '',
+        vid: (
+            <div className='slide-vid'>
+                <video 
+                    className='slide-vid'
+                    autoPlay
+                    preload
+                    poster= {img04}
+                >
+                    <source
+                        src= {rev03}
+                        type='video/mp4'
+                    />
+                </video>
+            </div>
+        ),
+        prev: 7,
+        next: 3
+    },
+    {
+        id:7,
+        name: '',
+        vid: (
+            <video 
+                className='slide-vid'
+                autoPlay
+                preload
+                poster= {img03}
+            >
+                <source
+                    src= {rev02}
+                    type='video/mp4'
+                />
+            </video>
+        ),
+        prev: 8,
+        next: 2
+    },
+    {
+        id:8,
+        name: '',
+        vid: (
+            <div className='slide-vid'>
+                <video 
+                    className='slide-vid'
+                    autoPlay
+                    preload
+                    poster= {img02}
+                >
+                    <source
+                        src= {rev01}
+                        type='video/mp4'
+                    />
+                </video>
+            </div>
+        ),
+        prev: 5,
+        next: 1
     }
 ]
 
