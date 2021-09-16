@@ -16,7 +16,7 @@
     height: 45px;
     padding: .7%;
     background: rgba(0, 0, 0, .2);
-    z-index: 4;
+    z-index: 3;
 }
 
 .menuIcon {
@@ -31,7 +31,7 @@
     background: white;
     height: 100%;
     width: 200px;
-    z-index: 4;
+    z-index: 10;
 }
 
 .menu-in {
@@ -40,7 +40,7 @@
     background: white;
     height: 100%;
     width: 200px;
-    z-index: 5;
+    z-index: 10;
     animation: menuIn .4s ease-out;
 }
 
@@ -55,7 +55,7 @@
     background: white;
     height: 100%;
     width: 200px;
-    z-index: 5;
+    z-index: 10;
     animation: menuOut .4s ease-in;
 }
 
@@ -124,9 +124,10 @@
     width: 100vw;
     height: 100vh;
     position: absolute;
+    left: 0;
     opacity: 1;
-    z-index: 3;
-    transition: all .2s ease-out;
+    transition: opacity .2s ease-out;
+    z-index: 9;
 }
 
 .shadowOff {
@@ -134,8 +135,9 @@
     width: 100vw;
     height: 100vh;
     position: absolute;
+    left: -1920px;
     opacity: 0;
-    z-index: 0;
-    transition: all .2s ease-out;
+    transition: opacity .2s ease-out;
+    z-index: 9;
 }
 
