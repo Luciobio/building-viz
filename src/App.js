@@ -25,9 +25,11 @@ function App() {
   const date = new Date("01/20/2021");
   const year = date.getFullYear();
 
-  const changeClassName = () =>{
-    let cName = document.getElementById('menu');
-    cName.className = (cName.className === 'menu-in') ? 'menu-out' : 'menu-in';
+  const changeClassName = () => {
+    let cMenu = document.getElementById('menu');
+    let cShadow = document.getElementById('shadow');
+    cMenu.className = (cMenu.className === 'menu-in') ? 'menu-out' : 'menu-in';
+    cShadow.className = (cShadow.className === 'shadowOn') ? 'shadowOff' : 'shadowOn';
   }
 
   return (
@@ -44,19 +46,19 @@ function App() {
             </button>
           </div>
           <div className='menu-links'>
-            <Link to='/' className='menu-link'>
+            <Link to='/' className='menu-link' onClick= {changeClassName}>
               Home
             </Link>
-            <Link to='/building' className='menu-link'>
+            <Link to='/building' className='menu-link' onClick= {changeClassName}>
               Building
             </Link>
-            <Link to='/amenities' className='menu-link'>
+            <Link to='/amenities' className='menu-link' onClick= {changeClassName}>
               Amenities
             </Link>
-            <Link to='/floorplans' className='menu-link'>
+            <Link to='/floorplans' className='menu-link' onClick= {changeClassName}>
               Floorplans
             </Link>
-            <Link to='/video' className='menu-link'>
+            <Link to='/video' className='menu-link' onClick= {changeClassName}>
               Video
             </Link>
           </div>
@@ -80,6 +82,8 @@ function App() {
           </div>
         </div>
       </div>
+      <div id='shadow' className='shadowOff' onClick= {changeClassName}></div>
+
       <Switch>
         <Route path='/' exact>
           <Home/>
