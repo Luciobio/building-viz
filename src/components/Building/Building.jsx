@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from 'react-router-dom'
 import VideoSlide from '../VideoSlide/VideoSlide'
 import vid01 from './../../videos/WV_animation/WV_Animation_01.mp4'
@@ -195,6 +195,14 @@ const videos = [
 ]
 
 const Building = () => {
+
+    /* useEffect( () => {
+        let vids = [vid01,vid02,vid03,vid04,rev01,rev02,rev03,rev04];
+        vids.forEach((video) => {
+            new Video().src = video
+        });
+      },[]); */
+
     return (
         <div>
             <VideoSlide items = {videos}/>

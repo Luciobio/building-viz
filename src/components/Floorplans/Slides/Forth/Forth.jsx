@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../Floorplans.css'
 
 import {ReactComponent as Circle} from '../../../../icons/circle.svg'
 import {ReactComponent as SurfIcon} from '../../../../icons/surface.svg'

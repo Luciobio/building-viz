@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Slideshow from '../Slideshow/Slideshow'
 import rooftop from './../../images/cams/rooftop-cam.jpg'
 import bedroom from './../../images/cams/bedroom-cam.jpg'
@@ -59,6 +59,13 @@ const amenities = [
 
 const Amenities = () => {
     
+    useEffect( () => {
+        let pics = [kitchen,bedroom,bathroom,kitchen];
+        pics.forEach((image) => {
+            new Image().src = image
+        });
+      },[]);
+
     return (
         <div>
             <Slideshow items = {amenities}/>
