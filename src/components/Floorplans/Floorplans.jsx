@@ -65,22 +65,15 @@ const floorplans = [
   }
 ];
 
-const pics = [
-  terrace,
-  thirdfloor,
-  secondfloor,
-  firstfloor
-];
-
 const Floorplans = () => {
 
   const [item, setItem] = useState(0);
 
   useEffect( () => {
-    pics.forEach( (picture) => {
-      const img = new Image();
-      img.src = picture.filename
-    })
+    let pics = [terrace,thirdfloor,secondfloor,firstfloor];
+    pics.forEach((image) => {
+        new Image().src = image
+    });
   });
 
   const changeClassName = (id,name1,name2) =>{
