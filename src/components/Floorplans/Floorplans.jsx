@@ -1,116 +1,125 @@
-import React from 'react'
-import FloorSlide from '../FloorSlide/FloorSlide'
+import React, {useState, useEffect} from 'react';
 import terrace from './../../images/floorplans/01-terrace.jpg'
 import thirdfloor from './../../images/floorplans/02-3rd_floor.jpg'
 import secondfloor from './../../images/floorplans/03-2nd_floor.jpg'
 import firstfloor from './../../images/floorplans/04-1st_floor.jpg'
-import {ReactComponent as Circle} from './../../icons/circle.svg'
-import {ReactComponent as SurfIcon} from './../../icons/surface.svg'
-import {ReactComponent as BedIcon} from './../../icons/bed.svg'
-import {ReactComponent as BathIcon} from './../../icons/bath.svg'
+import {ReactComponent as PrevArrow} from './../../icons/arrow-prev.svg'
+import {ReactComponent as NextArrow} from './../../icons/arrow-next.svg'
+import Forth from './Slides/Forth/Forth'
 import './Floorplans.css'
 
 const floorplans = [
-    {
-      id:0,
-      name:'Terrace',
-      src: (
-        <div className=''>
-          <img
-            id='slide-image'
-            className='slide-img'
-            src= {terrace}
-            alt= ''
-          />
-          <svg className='svg' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080' preserveAspectRatio='xMidYMid slice' width='100vw' height='100vh'>
-          <rect className='frame' width='100vw' height='100vh' fill='rgba(0, 0, 0, 0)'></rect>
-          <polygon className='hoverImg poly1a' points='190,185 1050,185 1050,865 190,865' fill='rgba(0, 0, 0, 0.5)'/>
-          <polygon className='hoverImg poly1b' points='1055,185 1700,185 1700,860 1055,860' fill='rgba(0, 0, 0, 0.5)'/>
-          </svg>
-          <div className='tag tag1a'>
-            <Circle className='circle' />
-            <p className='tagName'>Terrace</p>
-          </div>
-          <div className='infoBox box1a'>
-            <div className='boxInfo'>
-              <div className='bI-head'>
-                <h4>Name</h4>
-                <Circle className='circle'/>
-              </div>
-              <div className='bI-cont'>
-                <div>
-                  <p>Info info info</p>
-                </div>
-                <div className='infoBtns'>
-                  <button className='infoBtn'>360?</button>
-                  <button className='infoBtn'>Details</button>
-                </div>
-              </div>
-            </div>
-            <div className='boxIcons'>
-              <div className='IBIcont'>
-                <SurfIcon className='IB-Icon'/>
-                <p className='liltxt'>surf</p>
-              </div>
-              <div className='IBIcont'>
-                <BedIcon className='IB-Icon'/>
-                <p className='liltxt'>num</p>
-              </div>
-              <div className='IBIcont'>
-                <BathIcon className='IB-Icon'/>
-                <p className='liltxt'>num</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )
-    },
-    {
-      id:1,
-      name: 'Third Floor',
-      src: (
+  {
+    id:0,
+    name:'Terrace',
+    img: (
         <img
           id='slide-image'
           className='slide-img'
-          src= {thirdfloor}
+          src= {terrace}
           alt= ''
         />
-      )
-    },
-    {
-      id:2,
-      name: 'Second Floor',
-      src: (
+      ),
+    comp: <Forth />
+  },
+  {
+    id:1,
+    name: 'Third Floor',
+    img: (
+      <img
+        id='slide-image'
+        className='slide-img'
+        src= {thirdfloor}
+        alt= ''
+      />
+    ),
+    comp: null
+  },
+  {
+    id:2,
+    name: 'Second Floor',
+    img: (
+      <img
+        id='slide-image'
+        className='slide-img'
+        src= {secondfloor}
+        alt= ''
+      />
+    ),
+    comp: null
+  },
+  {
+    id:3,
+    name: 'First Floor',
+    img: (
+      <div className='slide-img'>
         <img
-          id='slide-image'
           className='slide-img'
-          src= {secondfloor}
+          id='slide-image'
+          src= {firstfloor}
           alt= ''
         />
-      )
-    },
-    {
-      id:3,
-      name: 'First Floor',
-      src: (
-        <div className='slide-img'>
-          <img
-            className='slide-img'
-            id='slide-image'
-            src= {firstfloor}
-            alt= ''
-          />
-        </div>
-      )
-    }
-  ];
+      </div>
+    ),
+    comp: null
+  }
+];
+
+const pics = [
+  terrace,
+  thirdfloor,
+  secondfloor,
+  firstfloor
+];
 
 const Floorplans = () => {
+
+  const [item, setItem] = useState(0);
+
+  useEffect( () => {
+    pics.forEach( (picture) => {
+      const img = new Image();
+      img.src = picture.filename
+    })
+  });
+
+  const changeClassName = (id,name1,name2) =>{
+    let cName = document.getElementById(id);
+    cName.className = (cName.className === name2) ? name1 : name2;
+  }
+
+  const next = () => {
+      const nextItem = item === floorplans.length - 1 ? 0 : item + 1;
+      setItem(nextItem)
+      changeClassName('slide-image','slide-img','slide-img2');
+  }
+  
+  const prev = () => {
+      const nextItem = item === 0 ? floorplans.length - 1 : item - 1;
+      setItem(nextItem)
+      changeClassName('slide-image','slide-img','slide-img2');
+  }
   
   return (
-    <div>
-      <FloorSlide items = {floorplans}/>
-    </div>
+    <div className='slider-cont'>
+          <div className='slide'>
+              {floorplans[item].img}
+              {floorplans[item].comp}
+              <div className='slide-title'>{floorplans[item].name}</div>
+          </div>
+          <div className='slider-btns-cont'>
+              <button className='slider-btns prevBtn' onClick={prev}>
+                  <div className='btn-bkg'>
+                      <PrevArrow className='arrow'/>
+                  </div>
+              </button>
+              <button className='slider-btns nextBtn' onClick={next}>
+                  <div className='btn-bkg'>
+                      <NextArrow className='arrow'/>
+                  </div>
+              </button>
+          </div>
+      </div>
   );
   }
 

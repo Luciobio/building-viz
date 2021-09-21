@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+/* import React, {useState} from 'react';
 import './FloorSlide.css'
 import {ReactComponent as PrevArrow} from './../../icons/arrow-prev.svg'
 import {ReactComponent as NextArrow} from './../../icons/arrow-next.svg'
@@ -46,4 +46,4 @@ const FloorSlide = ({items}) => {
     );
 }
 
-export default FloorSlide
+export default FloorSlide */
