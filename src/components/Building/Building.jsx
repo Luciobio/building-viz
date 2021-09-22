@@ -15,186 +15,185 @@ import img03 from './../../images/posters/WV_img-03.jpg'
 import img04 from './../../images/posters/WV_img-04.jpg'
 import './Building.css'
 
-
-const videos = [
-    {
-        id:0,
-        name:'',
-        vid: (
-            <div className='slide00'>
-                <img
-                    className='slide00'
-                    src={img01}
-                    alt=''
-                />
-            </div>
-        ),
-        prev: 8,
-        next: 1
-    },
-    {
-        id:1,
-        name: '',
-        vid: (
-            <video 
-                className='slide-vid'
-                autoPlay
-                preload
-                poster= {img01}
-            >
-            <source
-                src= {vid01}
-                type='video/mp4'
-            />
-            </video>
-        ),
-        prev: 8,
-        next: 2
-    },
-    {
-        id:2,
-        name: '',
-        vid: (
-            <div className='slide-vid'>
-                <video 
-                    className='slide-vid'
-                    autoPlay
-                    preload
-                    poster= {img02}
-                >
-                    <source
-                        src= {vid02}
-                        type='video/mp4'
-                    />
-                </video>
-            </div>
-        ),
-        prev: 7,
-        next: 3
-    },
-    {
-        id:3,
-        name: '',
-        vid: (
-            <video 
-                className='slide-vid'
-                autoPlay
-                preload
-                poster= {img03}
-            >
-                <source
-                    src= {vid03}
-                    type='video/mp4'
-                />
-            </video>
-        ),
-        prev: 6,
-        next: 4
-    },
-    {
-        id:4,
-        name: '',
-        vid: (
-            <div className='slide-vid'>
-                <video 
-                    className='slide-vid'
-                    autoPlay
-                    preload
-                    poster= {img04}
-                >
-                    <source
-                        src= {vid04}
-                        type='video/mp4'
-                    />
-                </video>
-            </div>
-        ),
-        prev: 5,
-        next: 1
-    },
-    {
-        id:5,
-        name: '',
-        vid: (
-            <video 
-                className='slide-vid'
-                autoPlay
-                preload
-                poster= {img01}
-            >
-                <source
-                    src= {rev04}
-                    type='video/mp4'
-                />
-            </video>
-        ),
-        prev: 6,
-        next: 4
-    },
-    {
-        id:6,
-        name: '',
-        vid: (
-            <div className='slide-vid'>
-                <video 
-                    className='slide-vid'
-                    autoPlay
-                    preload
-                    poster= {img04}
-                >
-                    <source
-                        src= {rev03}
-                        type='video/mp4'
-                    />
-                </video>
-            </div>
-        ),
-        prev: 7,
-        next: 3
-    },
-    {
-        id:7,
-        name: '',
-        vid: (
-            <video 
-                className='slide-vid'
-                autoPlay
-                preload
-                poster= {img03}
-            >
-                <source
-                    src= {rev02}
-                    type='video/mp4'
-                />
-            </video>
-        ),
-        prev: 8,
-        next: 2
-    },
-    {
-        id:8,
-        name: '',
-        vid: (
-            <div className='slide-vid'>
-                <video 
-                    className='slide-vid'
-                    autoPlay
-                    preload
-                    poster= {img02}
-                >
-                    <source
-                        src= {rev01}
-                        type='video/mp4'
-                    />
-                </video>
-            </div>
-        ),
-        prev: 5,
-        next: 1
-    }
-]
-
 const Building = () => {
+
+    const videos = [
+        {
+            id:0,
+            name:'',
+            vid: (
+                <div className='slide00'>
+                    <img
+                        className='slide00'
+                        src={img01}
+                        alt=''
+                    />
+                </div>
+            ),
+            prev: 8,
+            next: 1
+        },
+        {
+            id:1,
+            name: '',
+            vid: (
+                <video 
+                    className='slide-vid'
+                    autoPlay
+                    preload = 'auto'
+                    poster= {img01}
+                >
+                <source
+                    src= {vid01}
+                    type='video/mp4'
+                />
+                </video>
+            ),
+            prev: 8,
+            next: 2
+        },
+        {
+            id:2,
+            name: '',
+            vid: (
+                <div className='slide-vid'>
+                    <video 
+                        className='slide-vid'
+                        autoPlay
+                        preload = 'auto'
+                        poster= {img02}
+                    >
+                        <source
+                            src= {vid02}
+                            type='video/mp4'
+                        />
+                    </video>
+                </div>
+            ),
+            prev: 7,
+            next: 3
+        },
+        {
+            id:3,
+            name: '',
+            vid: (
+                <video 
+                    className='slide-vid'
+                    autoPlay
+                    preload = 'auto'
+                    poster= {img03}
+                >
+                    <source
+                        src= {vid03}
+                        type='video/mp4'
+                    />
+                </video>
+            ),
+            prev: 6,
+            next: 4
+        },
+        {
+            id:4,
+            name: '',
+            vid: (
+                <div className='slide-vid'>
+                    <video 
+                        className='slide-vid'
+                        autoPlay
+                        preload = 'auto'
+                        poster= {img04}
+                    >
+                        <source
+                            src= {vid04}
+                            type='video/mp4'
+                        />
+                    </video>
+                </div>
+            ),
+            prev: 5,
+            next: 1
+        },
+        {
+            id:5,
+            name: '',
+            vid: (
+                <video 
+                    className='slide-vid'
+                    autoPlay
+                    preload = 'auto'
+                    poster= {img01}
+                >
+                    <source
+                        src= {rev04}
+                        type='video/mp4'
+                    />
+                </video>
+            ),
+            prev: 6,
+            next: 4
+        },
+        {
+            id:6,
+            name: '',
+            vid: (
+                <div className='slide-vid'>
+                    <video 
+                        className='slide-vid'
+                        autoPlay
+                        preload = 'auto'
+                        poster= {img04}
+                    >
+                        <source
+                            src= {rev03}
+                            type='video/mp4'
+                        />
+                    </video>
+                </div>
+            ),
+            prev: 7,
+            next: 3
+        },
+        {
+            id:7,
+            name: '',
+            vid: (
+                <video 
+                    className='slide-vid'
+                    autoPlay
+                    preload = 'auto'
+                    poster= {img03}
+                >
+                    <source
+                        src= {rev02}
+                        type='video/mp4'
+                    />
+                </video>
+            ),
+            prev: 8,
+            next: 2
+        },
+        {
+            id:8,
+            name: '',
+            vid: (
+                <div className='slide-vid'>
+                    <video 
+                        className='slide-vid'
+                        autoPlay
+                        preload = 'auto'
+                        poster= {img02}
+                    >
+                        <source
+                            src= {rev01}
+                            type='video/mp4'
+                        />
+                    </video>
+                </div>
+            ),
+            prev: 5,
+            next: 1
+        }
+    ]
 
     useEffect( () => {
         let vids = [vid01,vid02,vid03,vid04,rev01,rev02,rev03,rev04];
