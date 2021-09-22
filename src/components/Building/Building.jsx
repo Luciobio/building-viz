@@ -196,12 +196,16 @@ const videos = [
 
 const Building = () => {
 
-    /* useEffect( () => {
+    useEffect( () => {
         let vids = [vid01,vid02,vid03,vid04,rev01,rev02,rev03,rev04];
+        let imgs = [img01,img02,img03,img04];
         vids.forEach((video) => {
-            new Video().src = video
+            new MediaSource().src = video
         });
-      },[]); */
+        imgs.forEach((image) =>{
+            new Image().src = image
+        });
+      },[]);
 
     return (
         <div>
