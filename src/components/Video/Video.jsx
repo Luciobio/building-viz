@@ -36,18 +36,19 @@ import ReactPlayer from "react-player"
 import './Video.css'
 
 const Video = () => {
-  
-    return (
-      <div className='vid'>
-        <ReactPlayer
-          className='vid'
-          url="https://vimeo.com/395299333"
-          controls= 'true'
-          width= ''
-          height= '100%'
-        />
-      </div>
-    );
-    }
+
+  return (
+    <div className='vid'>
+      <ReactPlayer
+        className='vid'
+        url="https://vimeo.com/395299333"
+        controls= 'true'
+        width= ''
+        height= '100%'
+      /> 
+
+    </div>
+  );
+}
 
 export default Video

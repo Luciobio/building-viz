@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,71 +18,138 @@ import {ReactComponent as IgIcon} from './icons/instagram.svg'
 import {ReactComponent as WaIcon} from './icons/whatsapp.svg'
 
 import './App.css'
+import { Spinner } from "reactstrap";
 
 
 function App() {
 
+  const [isLoading, setIsLoading] = useState(true);
+
+  const cacheMedia = async (srcArray) => {
+    const promises = await srcArray.map((src) =>{
+      return new Promise (function (resolve, reject) {
+        if(src.slice(-3) === 'jpg') {
+          const img = new Image();
+
+          img.src= src;
+          img.onload = resolve();
+          img.onerror = reject();
+        }
+        else {
+          const vid = document.createElement('video');
+
+          vid.src= src;
+          document.body.appendChild(vid);
+          vid.onload = resolve();
+          vid.onerror = reject();
+        }
+      });
+    });
+
+    await Promise.all(promises);
+
+    setIsLoading(false);
+  };
+
+  useEffect( ()=>{
+    const imgs = [
+      './images/cams/bathroom-cam.jpg',
+      './images/cams/bedroom-cam.jpg',
+      './images/cams/kitchen-cam.jpg',
+      './images/cams/rooftop-cam.jpg',
+      './images/floorplans/01-terrace.jpg',
+      './images/floorplans/02-3rd_floor.jpg',
+      './images/floorplans/03-2nd_floor.jpg',
+      './images/floorplans/04-1st_floor.jpg',
+      './images/posters/WV_img-01_shade.jpg',
+      './images/posters/WV_img-01.jpg',
+      './images/posters/WV_img-02.jpg',
+      './images/posters/WV_img-03.jpg',
+      './images/posters/WV_img-04.jpg',
+      './images/posters/WV_img-05.jpg',
+      './videos/WV_animation/WV_Animation_01.mp4',
+      './videos/WV_animation/WV_Animation_02.mp4',
+      './videos/WV_animation/WV_Animation_03.mp4',
+      './videos/WV_animation/WV_Animation_04.mp4',
+      './videos/WV_animation/WV_Reverse_01.mp4',
+      './videos/WV_animation/WV_Reverse_02.mp4',
+      './videos/WV_animation/WV_Reverse_03.mp4',
+      './videos/WV_animation/WV_Reverse_04.mp4',
+    ];
+
+    cacheMedia(imgs);
+  },[]);
+
   const date = new Date("01/20/2021");
   const year = date.getFullYear();
 
-  const changeClassName = () => {
-    let cMenu = document.getElementById('menu');
-    let cShadow = document.getElementById('shadow');
-    cMenu.className = (cMenu.className === 'menu-in') ? 'menu-out' : 'menu-in';
-    cShadow.className = (cShadow.className === 'shadowOn') ? 'shadowOff' : 'shadowOn';
+  const changeClassName = (id,name1,name2) =>{
+    let cName = document.getElementById(id);
+    cName.className = (cName.className === name2) ? name1 : name2;
+  };
+
+  const menuClick = () => {
+    changeClassName('menu','menu-out','menu-in');
+    changeClassName('shadow','shadowOff','shadowOn')
   }
 
   return (
     <Router className='main'>
+      {isLoading
+        ?
+        <div>
+          <Spinner />
+        </div>
+        :
       <div className='App'>
-      <div className='menu-cont'>
-        <button className='menu-btn' onClick= {changeClassName}>
-          <MenuIcon className='menuIcon'/>
-        </button>
-        <div id='menu' className='menu'>
-          <div className='menu-head'>
-            <button className='btn' onClick= {changeClassName}>
-              <Xmark className='xmark' />
-            </button>
-          </div>
-          <div className='menu-links'>
-            <Link to='/' className='menu-link' onClick= {changeClassName}>
-              Home
-            </Link>
-            <Link to='/building' className='menu-link' onClick= {changeClassName}>
-              Building
-            </Link>
-            <Link to='/amenities' className='menu-link' onClick= {changeClassName}>
-              Amenities
-            </Link>
-            <Link to='/floorplans' className='menu-link' onClick= {changeClassName}>
-              Floorplans
-            </Link>
-            <Link to='/video' className='menu-link' onClick= {changeClassName}>
-              Video
-            </Link>
-          </div>
-          <div className='menu-bot'>
-            <img src={blackLogo} className='menu-logo' alt=' '/>
-            <h2>3DUS</h2>
-            <div className='mediaIcons'>
-              <a className='web-link'href='https://www.facebook.com/3dfactoryUS/'>
-                <FbIcon className='media-icon'/>
-              </a>
-              <a className='web-link'href='https://www.instagram.com/3dfactoryus/'>
-                <IgIcon className='media-icon'/>
-              </a>
-              <a className='web-link'href='https://wa.me/18139658628'>
-                <WaIcon className='media-icon'/>
-              </a>
-            </div>  
-            <div className='copywrite'>
-              <p className='web-link'>{year} © <a className='web-link'href='https://3dus.us'>3DUS.us</a></p>
+        <div className='menu-cont'>
+          <button className='menu-btn' onClick= {menuClick}>
+            <MenuIcon className='menuIcon'/>
+          </button>
+          <div id='menu' className='menu'>
+            <div className='menu-head'>
+              <button className='btn' onClick= {menuClick}>
+                <Xmark className='xmark' />
+              </button>
+            </div>
+            <div className='menu-links'>
+              <Link to='/' className='menu-link' onClick= {menuClick}>
+                Home
+              </Link>
+              <Link to='/building' className='menu-link' onClick= {menuClick}>
+                Building
+              </Link>
+              <Link to='/amenities' className='menu-link' onClick= {menuClick}>
+                Amenities
+              </Link>
+              <Link to='/floorplans' className='menu-link' onClick= {menuClick}>
+                Floorplans
+              </Link>
+              <Link to='/video' className='menu-link' onClick= {menuClick}>
+                Video
+              </Link>
+            </div>
+            <div className='menu-bot'>
+              <img src={blackLogo} className='menu-logo' alt=' '/>
+              <h2>3DUS</h2>
+              <div className='mediaIcons'>
+                <a className='web-link'href='https://www.facebook.com/3dfactoryUS/'>
+                  <FbIcon className='media-icon'/>
+                </a>
+                <a className='web-link'href='https://www.instagram.com/3dfactoryus/'>
+                  <IgIcon className='media-icon'/>
+                </a>
+                <a className='web-link'href='https://wa.me/18139658628'>
+                  <WaIcon className='media-icon'/>
+                </a>
+              </div>  
+              <div className='copywrite'>
+                <p className='web-link'>{year} © <a className='web-link'href='https://3dus.us'>3DUS.us</a></p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div id='shadow' className='shadowOff' onClick= {changeClassName}></div>
+        <div id='shadow' className='shadowOff' onClick= {menuClick}></div>
 
       <Switch>
         <Route path='/' exact>
@@ -102,6 +169,7 @@ function App() {
         </Route>
       </Switch>
       </div>
+    }
     </Router>
   );
 }

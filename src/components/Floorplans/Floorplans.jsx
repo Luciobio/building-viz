@@ -70,20 +70,11 @@ const Floorplans = () => {
   const [item, setItem] = useState(0);
 
   useEffect( () => {
-    let pics = [terrace,thirdfloor,secondfloor,firstfloor];
+    /* let pics = [terrace,thirdfloor,secondfloor,firstfloor];
     pics.forEach((image) => {
         new Image().src = image
-    });
+    }); */
   },[]);
-
-  /* useEffect(() => {
-    //preloading image
-    let pics = [terrace,thirdfloor,secondfloor,firstfloor];
-    pics.forEach((e) => {
-      const img = new Image();
-      img.src = e;
-    });
-  }, []); */
 
   const changeClassName = (id,name1,name2) =>{
     let cName = document.getElementById(id);

@@ -60,10 +60,10 @@ const amenities = [
 const Amenities = () => {
     
     useEffect( () => {
-        let pics = [kitchen,bedroom,bathroom,kitchen];
+        /* let pics = [kitchen,bedroom,bathroom,kitchen];
         pics.forEach((image) => {
             new Image().src = image
-        });
+        }); */
       },[]);
 
     return (
