@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import fligthToTop from '../assets/Video/flight to top.mp4';
 import { HiOutlineX } from "react-icons/hi";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { fetchBuildData } from '../mock';
+import { fetchBuildData } from '../data/mock';
 
 const FloorsPage = () => {
     const [videoFinished, setVideoFinished] = useState(false);
     const [data, setData] = useState(null);
-    const [floor, setFloor] = useState(1);
+    const [floor, setFloor] = useState(0);
     const [selected, setSelected] = useState(null);
 
     useEffect(() => {
@@ -48,9 +48,9 @@ const FloorsPage = () => {
                 <div className="flex absolute top-0 left-0 w-full h-full">
                     <div className='z-0'>
                         <img
-                            key={floor}
+                            key={data.floors[floor-1].name}
                             className='absolute top-0 left-0 w-full h-full object-cover'
-                            src={data.floors[floor - 1].img}
+                            src={data.floors[floor-1].img}
                             alt=''
                         />
                     </div>
@@ -63,7 +63,7 @@ const FloorsPage = () => {
                         <div className='menuBody max-h-[calc(100vh-70px)] overflow-y-auto'>
                             {
                                 data.floors.map(item => (
-                                    <div className='text-black'>
+                                    <div key={item.name} className='text-black'>
                                         <div className='flex justify-between w-full py-4'>
                                             <h3 className='ml-8 text-xl font-semibold w-11/12'>{item.name}</h3>
                                             {
