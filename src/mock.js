@@ -6,7 +6,7 @@ export const fetchBuildData = () => {
                     { 
                         id: 1, 
                         name: 'Piso 1',
-                        img: '../src/assets/Floorplans/1550 Lamar St-Building_Level 01.jpg',
+                        img: '../assets/Floorplans/1550 Lamar St-Building_Level 01.jpg',
                         units:[
                         {
                             id: 101,
